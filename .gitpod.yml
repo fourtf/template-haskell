@@ -11,3 +11,4 @@ tasks:
 vscode:
   extensions:
     - haskell.haskell
+    - elmTooling.elm-ls-vscode
