@@ -1,13 +1,23 @@
 image:
   file: .gitpod.Dockerfile
 tasks:
-  - init: |
-      npm install
+  - name: Run Fileserver + Proxy
+    init: npm install
+    command: npm start
+
+  - name: Configure Elm
+    before: |
+      mkdir /workspace/.npm-global
+      npm config set prefix '/workspace/.npm-global'
+      npm install -g elm-test elm-format
+    command: npm run fe
+
+  - name: Haskell Backend
+    init: |
       cabal update
       stack build
+    command: npm run be
 
-    command: |
-      npm start
 ports:
   - port: 3000
     onOpen: notify
