@@ -5,14 +5,14 @@ tasks:
     init: npm install
     command: npm start
 
-  - name: Configure Elm
+  - name: Build Elm Frontend
     before: |
       mkdir /workspace/.npm-global
       npm config set prefix '/workspace/.npm-global'
       npm install -g elm-test elm-format
     command: npm run fe
 
-  - name: Haskell Backend
+  - name: Run Haskell Backend
     init: |
       cabal update
       stack build

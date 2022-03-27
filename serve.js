@@ -12,6 +12,14 @@ const wsProxy = createProxyServer({
     ws: true
 });
 
+wsProxy.on("error", (err, req, res, target) => {
+    if (err.message.indexOf("ECONNREFUSED") != -1) {
+        console.error("proxy: connection to backend refused (backend not started?)")
+    } else {
+        console.log("proxy:", err)
+    }
+});
+
 // proxy websockets
 server.on('upgrade', (req, socket, head) => {
     wsProxy.ws(req, socket, head);
