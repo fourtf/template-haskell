@@ -1,3 +1,11 @@
+### Elm
+elm-stuff/
+public/script.js
+
+
+### Node.js
+node_modules/
+
 ### Haskell
 dist
 dist-*

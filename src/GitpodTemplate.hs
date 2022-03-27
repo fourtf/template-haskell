@@ -51,7 +51,7 @@ someFunc :: IO ()
 someFunc = do
   putStrLn "hello"
   state <- newMVar newServerState
-  WS.runServer "0.0.0.0" 3000 $ application state
+  WS.runServer "0.0.0.0" 3001 $ application state
 
 -- Note that WS.ServerApp is nothing but a type synonym for WS.PendingConnection -> IO ().
 -- Our application starts by accepting the connection. In a more realistic application, you probably want to check the path and headers provided by the pending request.

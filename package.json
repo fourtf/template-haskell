@@ -1,0 +1,13 @@
+{
+  "description": "A script which serves the elm generated js file and reverse proxies the backend.",
+  "main": "serve.js",
+  "scripts": {
+    "start": "node serve.js",
+    "be": "stack run",
+    "fe": "elm make frontend/Main.elm --output public/script.js"
+  },
+  "dependencies": {
+    "express": "^4.17.3",
+    "http-proxy": "^1.18.1"
+  }
+}

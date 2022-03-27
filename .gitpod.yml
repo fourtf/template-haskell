@@ -2,11 +2,17 @@ image:
   file: .gitpod.Dockerfile
 tasks:
   - init: |
+      npm install
       cabal update
       stack build
 
     command: |
-      stack test
+      npm start
+ports:
+  - port: 3000
+    onOpen: notify
+  - port: 3001
+    onOpen: ignore
 
 vscode:
   extensions:
