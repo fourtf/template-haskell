@@ -7,6 +7,6 @@ RUN sudo curl -L -o elm.gz https://github.com/elm/compiler/releases/download/0.1
     && sudo chmod +x elm \
     && sudo mv elm /usr/local/bin/
 RUN mkdir /workspace/.npm-global \
-    npm config set prefix '/workspace/.npm-global' \
-    npm install -g elm-test elm-format
+    && npm config set prefix '/workspace/.npm-global' \
+    && npm install -g elm-test elm-format
 ENV PATH="/workspace/.npm-global/bin"
