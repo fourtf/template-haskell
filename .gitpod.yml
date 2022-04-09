@@ -28,3 +28,8 @@ vscode:
   extensions:
     - haskell.haskell
     - elmTooling.elm-ls-vscode
+
+github:
+  prebuilds:
+    master: true
+    
